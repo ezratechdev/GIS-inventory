@@ -1,5 +1,5 @@
 
-## Deployment
+## GIS INVENTORY
 
 To install all packages run
 
