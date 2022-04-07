@@ -1,0 +1,53 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF4B2B;
+}
+
+form{
+    text-align: center;
+}
+
+form input[type="password"]{
+    border-radius: 1rem;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    margin: 0.5rem auto;
+    padding: 1rem;
+    box-shadow:  inset 29px 29px 44px #d94025,
+                 inset -29px -29px 44px #ff5631;
+}
+form input[type="password"]::placeholder{
+    color: #fff;
+}
+form button[type="submit"]{
+    background: #0099bc;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    transition: ease-in-out 0.2s;
+}
+form button[type="submit"]:hover{
+    background: #b6e4ee;
+}
+a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #aaa;
+    margin-top: 1rem;
+}

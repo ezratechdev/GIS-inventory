@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-color: #007af3;
+  /*========== Colors ==========*/
+  --hue: 240;
+  --first-color: hsl(var(--hue), 16%, 18%);
+  --first-color-alt: hsl(var(--hue), 16%, 12%);
+  --title-color: hsl(var(--hue), 8%, 15%);
+  --text-color: hsl(var(--hue), 8%, 35%);
+  --body-color: hsl(var(--hue), 100%, 99%);
+  --container-color: #FFF;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+
+  /*========== z index ==========*/
+  --z-modal: 1000;
+
+  /* added for grid */
+  --clr-primary: #651fff;
+  --clr-gray: #37474f;
+  --clr-gray-light: #b0bec5;
+  /* end of added */
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 1.75rem;
+    --normal-font-size: 1rem;
+  }
+}
+
+body {
+  background-color: #f6f5f7;
+  width: 100vw;
+  height: 100vh;
+}
+
+.list-holder , .list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.box {
+  width: 80%;
+  background-color: #FF4B2B;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  width: 300px;
+  height: 200px;
+  transform: translateX(200%);
+  transition: transform 0.4s ease;
+  /* display */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+}
+
+.box:nth-of-type(even) {
+  transform: translateX(-200%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.box-desc {
+  color: #f6f5f7;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.box-actions {
+  width: 100%;
+  overflow: hidden;
+  background: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: inset 20px 20px 40px #d94025,
+    inset -20px -20px 40px #ff5631;
+}
+
+/* start of modal */
+
+/* append for nav bar */
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background: white;
+  padding: 1em;
+  background: #f07c25;
+  background: #FF4B2B;
+  background: rgb(207, 200, 200);
+}
+
+.navbar .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 1.2em;
+}
+
+.navbar .logo span {
+  color: var(--primary-color);
+}
+
+.navbar nav {
+  display: none;
+}
+
+.navbar .container {
+  display: flex;
+  place-content: space-between;
+}
+
+.navbar .mobile-menu {
+  cursor: pointer;
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+nav {
+  position: fixed;
+  z-index: 999;
+  width: 66%;
+  right: 0;
+  top: 0;
+  background: #20272e;
+  height: 100vh;
+  padding: 1em;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul.primary-nav {
+  margin-top: 5em;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 0.5em;
+  font-size: 1.3em;
+  text-align: right;
+}
+
+nav li a:hover {
+  font-weight: bold;
+}
+
+.mobile-menu-exit {
+  float: right;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .mobile-menu,
+  .mobile-menu-exit {
+    display: none;
+  }
+
+  .navbar .container {
+    display: grid;
+    grid-template-columns: 180px auto;
+    justify-content: unset;
+  }
+
+  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar nav ul {
+    display: flex;
+  }
+
+  .navbar nav a {
+    color: black;
+    font-size: 1em;
+    padding: 0.1em 1em;
+  }
+
+  .navbar nav ul.primary-nav {
+    margin: 0;
+  }
+
+  .navbar nav li.current a {
+    font-weight: bold;
+  }
+
+  .navbar nav li.go-premium-cta a {
+    color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    font-weight: bold;
+    border-radius: 5em;
+    margin-top: -0.2em;
+  }
+
+  .navbar nav li.go-premium-cta a:hover {
+    background: var(--primary-color);
+    color: white;
+  }
+}
+
+
+
+/* end of append nav bar */
+
+.img-display{
+  width: 100%;
+  height: auto;
+}
+/* start of auto gen button */
+.genBtn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  margin: 1rem auto;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #767676;
+  background: #aaa;
+  border-radius: 1rem;
+  transition: 0.2s ease-in-out;
+}
+.genBtn:hover{
+  color: #aaa;
+  background: #767676;
+}
+/* end of autogen btn */

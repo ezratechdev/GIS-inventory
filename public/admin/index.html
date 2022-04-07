@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Admin page</title>
+</head>
+
+<body>
+    <!-- the add modal -->
+    <div id="my-modal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Add an Equipment Here</h2>
+          </div>
+          <div class="modal-body">
+            <form id="createEquipment" method="POST" action="/admin/create" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Name of Equipment"> <br>
+                <input type="text" name="description" placeholder="Description of the equipment"> <br>
+                <input type="file" name="image" required> <br>
+                <input type="submit" value="Create">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <h3>Admin Panel</h3>
+          </div>
+        </div>
+      </div>
+      <!-- end of add modal -->
+    <div class="main">
+        <!-- navbar start -->
+        <div class="navbar">
+            <div class="container">
+                <a class="logo" href="#">ADMIN <span>PANEL</span></a>
+    
+                <img id="mobile-cta" class="mobile-menu" src="./data/svg/toggle-on.svg" alt="Open Navigation">
+    
+                <nav>
+                    <img id="mobile-exit" class="mobile-menu-exit" src="./data/svg/toggle-off.svg" alt="Close Navigation">
+    
+                    <ul class="primary-nav">
+                        <li class="current"><a href="#">Home</a></li>
+                        <li class="current"><a href="../html/passwordReset.html">Reset Password</a></li>
+                        <li class="current"><a href="#" id="deleteUserAccount">Delete Account</a></li>
+                    </ul>
+    
+                    <ul class="secondary-nav">
+                        <li class="go-premium-cta" id="logOut"><a>Log Out</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- end of nav bar -->
+        <!-- <button id="modal-btn">Open</button> -->
+        <div class="addBtn">
+            <button id="modal-btn"> Add Equipment
+                <div class="icon">
+                  <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
+                </div>
+              </button>
+        </div>
+        
+        <!-- modal section -->
+        <!-- end of modal section -->
+        <div class="list-holder">
+            <div class="list"></div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
