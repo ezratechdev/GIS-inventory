@@ -1,7 +1,7 @@
 
 ## Deployment
 
-To install all packeges run
+To install all packages run
 
 ```bash
   yarn install
